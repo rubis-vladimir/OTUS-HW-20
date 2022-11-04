@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  #19 AnimeBook
+
+  Created by Владимир Рубис on 22.10.2022.
+  
+*/
+
+"Welcome" = "Welcome";
+"AnimeBook" = "AnimeBook";
+"Request Settings" = "Request Settings";
+"Quantity" = "Quantity";
+"Start Date" = "Start Date";
+"End Date" = "End Date";
+"Cancel" = "Cancel";
+" AnimeBook" = " AnimeBook";
+"OK" = "OK";
+"Something went wrong" = "Something went wrong";
+"Error" = "Error";
+"No Internet Connection" = "No Internet Connection";
+"Please check your internet connection and try again" = "Please check your internet connection and try again";
+"Send information to support. We will deal with this problem in the near future" = "Send information to support. We will deal with this problem in the near future";
+"Unfortunately, it was not possible to localize (translate) the data" = "Unfortunately, it was not possible to localize (translate) the data";
