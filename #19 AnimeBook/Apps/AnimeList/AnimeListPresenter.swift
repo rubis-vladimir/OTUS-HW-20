@@ -56,7 +56,19 @@ extension AnimeListPresenter: AnimeListPresentation {
             case .success(let models):
                 self?.animeModels = models
             case .failure(let error):
-                self?.delegate?.showError(error)
+                
+                var actions: [RecoveryOptions] = [.cancel]
+                switch error {
+                case .notInternet, .failedToLoad, .failedToTranslate:
+                    let tryAgainAction = RecoveryOptions.tryAgain {
+                        self?.getAnime(with: type)
+                    }
+                    actions.append(tryAgainAction)
+                default: break
+                }
+                
+                self?.delegate?.showError(RecoverableError(error: error,
+                                                           recoveryOptions: actions))
             }
         }
     }

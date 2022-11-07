@@ -26,7 +26,7 @@ protocol DataFetcherTranslateManagement {
                    completion: @escaping (Result<Translate, DataFetcherError>) -> Void)
 }
 
-// MARK: Сервис работы с запросами
+/// Сервис работы с запросами
 final class DataFetcherService {
     
     private let dataFetcher: DataFetcherProtocol
@@ -46,7 +46,6 @@ extension DataFetcherService: DataFetcherAnimeManagement {
     func fetchAnime(with parameters: ParametersAnimeRequest,
                    completion: @escaping (Result<Anime, DataFetcherError>) -> Void) {
         let stringParameters = convertForRequest(parameters)
-        
         dataFetcher.fetchData(requestBuilder: AnimeRequest.getAnime(patameters: stringParameters),
                               completion: completion)
     }

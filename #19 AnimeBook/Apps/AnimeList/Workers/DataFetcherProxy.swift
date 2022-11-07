@@ -65,7 +65,7 @@ extension DataFetcherProxy: DataFetcherProxyProtocol {
 extension DataFetcherProxy {
     /// Конвертирует одну модель данных в другую и решает нужно ли переводить текст
     private func convertAndTranslate(data: [AnimeData],
-                         completion: @escaping (Result<[AnimeModel], DataFetcherError>) -> Void) {
+                                     completion: @escaping (Result<[AnimeModel], DataFetcherError>) -> Void) {
         animeAdapter.getModels(from: data) { [weak self] models in
             
             if self?.currentAppleLanguage() == "Base" {

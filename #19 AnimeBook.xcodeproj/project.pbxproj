@@ -23,6 +23,7 @@
 		7D2F9252290D4F0D000C7480 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D2F9251290D4F0D000C7480 /* SnapKit */; };
 		7D2F9255290D5222000C7480 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D2F9254290D5222000C7480 /* SnapKit */; };
 		7D32DD042915ACDF00C2A472 /* UIViewController + ShowAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D32DD032915ACDF00C2A472 /* UIViewController + ShowAlertError.swift */; };
+		7D32DD082918E58600C2A472 /* RecoverableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D32DD072918E58600C2A472 /* RecoverableError.swift */; };
 		7D44E7CE2904347A00C6ABE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D44E7CC2904347A00C6ABE7 /* Localizable.strings */; };
 		7D46E3502912599300185F0A /* DataFetcherProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E34F2912599300185F0A /* DataFetcherProxy.swift */; };
 		7D46E3532914040400185F0A /* DataFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E3522914040400185F0A /* DataFetcherError.swift */; };
@@ -63,6 +64,7 @@
 		7D2F924A290D3737000C7480 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7D2F924C290D3DE0000C7480 /* UICollectionView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + Extensions.swift"; sourceTree = "<group>"; };
 		7D32DD032915ACDF00C2A472 /* UIViewController + ShowAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ShowAlertError.swift"; sourceTree = "<group>"; };
+		7D32DD072918E58600C2A472 /* RecoverableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableError.swift; sourceTree = "<group>"; };
 		7D44E7CD2904347A00C6ABE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D44E7D02904349100C6ABE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D46E34F2912599300185F0A /* DataFetcherProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherProxy.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7D46E3522914040400185F0A /* DataFetcherError.swift */,
+				7D32DD072918E58600C2A472 /* RecoverableError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				7D46E35A29142DBA00185F0A /* Translate.swift in Sources */,
 				7D46E3532914040400185F0A /* DataFetcherError.swift in Sources */,
 				7D46E3562914084800185F0A /* ApiKeys.swift in Sources */,
+				7D32DD082918E58600C2A472 /* RecoverableError.swift in Sources */,
 				7DB17E0B290321F30052E526 /* AppDelegate.swift in Sources */,
 				7D46E35C2914329C00185F0A /* Parameters.swift in Sources */,
 			);

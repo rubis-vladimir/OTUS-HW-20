@@ -8,10 +8,10 @@
 import UIKit
 
 extension UIViewController {
-
+    
     /// Показывает пользователю информацию об ошибке
-    func showAlertError(_ error: Error) {
-        guard let error = error as? DataFetcherError else { return }
+    func showAlertError(_ rError: RecoverableError) {
+        guard let error = rError.error as? DataFetcherError else { return }
         
         let errorMessage = [error.failureReason, error.recoverySuggestion]
             .compactMap({ $0 })
@@ -21,10 +21,25 @@ extension UIViewController {
             title: error.errorTitle,
             message: errorMessage,
             preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel)
-        alert.addAction(action)
+        
+        rError.recoveryOptions.forEach {
+            let action = createAlertAction(with: $0)
+            alert.addAction(action)
+        }
         
         present(alert, animated: true)
     }
+    
+    /// Создает действие в зависимости от опции
+    private func createAlertAction(with: RecoveryOptions) -> UIAlertAction {
+        switch with {
+        case let .tryAgain(action: action):
+            return UIAlertAction(title: "Try again".localize(),
+                                 style: .default) { _ in
+                action()
+            }
+        case .cancel:
+            return UIAlertAction(title: "OK", style: .cancel)
+        }
+    }
 }
-

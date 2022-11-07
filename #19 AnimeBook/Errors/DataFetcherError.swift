@@ -34,6 +34,7 @@ enum DataFetcherError: Error {
 }
 
 
+// MARK: - LocalizedError
 extension DataFetcherError: LocalizedError {
     var errorTitle: String? {
         switch self {
@@ -66,3 +67,7 @@ extension DataFetcherError: LocalizedError {
         }
     }
 }
+
+
+
+

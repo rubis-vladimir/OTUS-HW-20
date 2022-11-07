@@ -12,7 +12,7 @@ protocol AnimeListPresenterDelegate: AnyObject {
     /// Обновление UI
     func updateUI()
     /// Обработка и показ ошибки
-    func showError(_ error: Error)
+    func showError(_ rError: RecoverableError)
 }
 
 /// Контроллер представления коллекции Аниме
@@ -190,9 +190,9 @@ extension AnimeListViewController: AnimeListPresenterDelegate {
         }
     }
     
-    func showError(_ error: Error) {
+    func showError(_ rError: RecoverableError) {
         DispatchQueue.main.async {
-            self.showAlertError(error)
+            self.showAlertError(rError)
         }
     }
 }
