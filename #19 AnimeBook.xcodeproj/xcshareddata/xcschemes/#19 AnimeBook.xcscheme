@@ -28,6 +28,22 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7D32DD0C2918EA2700C2A472"
+               BuildableName = "#19 AnimeBookTests.xctest"
+               BlueprintName = "#19 AnimeBookTests"
+               ReferencedContainer = "container:#19 AnimeBook.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "_19_AnimeBookTests/testExample()">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

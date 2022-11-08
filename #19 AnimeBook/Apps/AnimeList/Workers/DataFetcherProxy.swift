@@ -33,7 +33,6 @@ final class DataFetcherProxy {
 extension DataFetcherProxy: DataFetcherProxyProtocol {
     func fetchAnime(with type: GetAnimeType,
                     completion: @escaping (Result<[AnimeModel], DataFetcherError>) -> Void) {
-        
         switch type {
         case .random:
             dataFetcher.fetchRandomAnime { [weak self] result in
