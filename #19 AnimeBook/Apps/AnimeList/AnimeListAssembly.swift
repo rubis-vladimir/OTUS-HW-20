@@ -19,8 +19,17 @@ final class AnimeListAssembly {
 // MARK: - Assemblying
 extension AnimeListAssembly: Assemblying {
     func assembly() -> UIViewController {
+        
+        let imageDownloadService = ImageDownloadService()
+        let animeCellAdapter = AnimeCellAdapter(imageDownloadService: imageDownloadService)
+        let networkDataFetcher = NetworkDataFetcher()
+        let dataFetcher = DataFetcherService(dataFetcher: networkDataFetcher)
+        let dataFetcherProxy = DataFetcherProxy(dataFetcher: dataFetcher,
+                                                animeAdapter: animeCellAdapter)
+        
         let router = AnimeListRouter(navigationController: navigationController)
-        let presenter = AnimeListPresenter(router: router)
+        let presenter = AnimeListPresenter(router: router,
+                                           dataFetcher: dataFetcherProxy)
         let viewController = AnimeListViewController(presenter: presenter)
         presenter.delegate = viewController
         return viewController

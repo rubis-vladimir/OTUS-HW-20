@@ -31,7 +31,7 @@ final class DataFetcherService {
     
     private let dataFetcher: DataFetcherProtocol
     
-    init(dataFetcher: DataFetcherProtocol = NetworkDataFetcher()) {
+    init(dataFetcher: DataFetcherProtocol) {
         self.dataFetcher = dataFetcher
     }
 }

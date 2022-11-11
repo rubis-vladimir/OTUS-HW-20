@@ -41,7 +41,7 @@ final class AnimeListPresenter {
     }
     
     init(router: AnimeListRouting,
-         dataFetcher: DataFetcherProxyProtocol = DataFetcherProxy()) {
+         dataFetcher: DataFetcherProxyProtocol) {
         self.router = router
         self.dataFetcher = dataFetcher
     }

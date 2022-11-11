@@ -20,7 +20,7 @@ protocol Adaptation {
 final class AnimeCellAdapter {
     private let imageDownloadService: ImageDownloadServiceProtocol
     
-    init(imageDownloadService: ImageDownloadServiceProtocol = ImageDownloadService()) {
+    init(imageDownloadService: ImageDownloadServiceProtocol) {
         self.imageDownloadService = imageDownloadService
     }
 }

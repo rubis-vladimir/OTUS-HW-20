@@ -17,12 +17,11 @@ protocol DataFetcherProxyProtocol {
 /// Заместитель DataFetcher
 final class DataFetcherProxy {
     
-//    private let translateManager: Translatable
     private let dataFetcher: DFM
     private let animeAdapter: Adaptation
     
-    init(dataFetcher: DFM = DataFetcherService(),
-         animeAdapter: Adaptation = AnimeCellAdapter()) {
+    init(dataFetcher: DFM,
+         animeAdapter: Adaptation) {
         self.dataFetcher = dataFetcher
         self.animeAdapter = animeAdapter
     }
