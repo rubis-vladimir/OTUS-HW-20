@@ -6,6 +6,7 @@
 //
 
 import Foundation
+typealias DFM = DataFetcherAnimeManagement & DataFetcherTranslateManagement
 
 /// Протокол управления заместителем
 protocol DataFetcherProxyProtocol {
@@ -16,14 +17,12 @@ protocol DataFetcherProxyProtocol {
 /// Заместитель DataFetcher
 final class DataFetcherProxy {
     
-    private let translateManager: Translatable
-    private let dataFetcher: DataFetcherAnimeManagement
+//    private let translateManager: Translatable
+    private let dataFetcher: DFM
     private let animeAdapter: Adaptation
     
-    init(translateManager: Translatable = TranslateManager(),
-         dataFetcher: DataFetcherAnimeManagement = DataFetcherService(),
+    init(dataFetcher: DFM = DataFetcherService(),
          animeAdapter: Adaptation = AnimeCellAdapter()) {
-        self.translateManager = translateManager
         self.dataFetcher = dataFetcher
         self.animeAdapter = animeAdapter
     }
@@ -76,10 +75,11 @@ extension DataFetcherProxy {
                                                    sourceLanguageCode: Localization.en.rawValue,
                                                    targetLanguageCode: self?.currentAppleLanguage() ?? Localization.ru.rawValue)
                 
-                self?.translateManager.translate(parameters: trParams,
+                self?.dataFetcher.translate(with: trParams,
                                                  completion: { result in
                     switch result {
-                    case .success(let texts):
+                    case .success(let translate):
+                        let texts = translate.translations.map {$0.text}
                         guard let models = self?.createNewModels(with: texts,
                                                                  oldModels: models) else { return }
                         completion(.success(models))

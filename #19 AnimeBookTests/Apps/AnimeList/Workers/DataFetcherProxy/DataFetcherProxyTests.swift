@@ -11,7 +11,6 @@ import XCTest
 final class DataFetcherProxyTests: XCTestCase {
     
     var sut: DataFetcherProxy!
-    var translateManager: TranslateManagerStub!
     var dataFetcher: DataFetcherStub!
     var animeAdapter: MockAnimeCellAdapter!
     
@@ -21,7 +20,6 @@ final class DataFetcherProxyTests: XCTestCase {
     }
     
     override func tearDown() {
-        translateManager = nil
         dataFetcher = nil
         animeAdapter = nil
         sut = nil
@@ -30,21 +28,24 @@ final class DataFetcherProxyTests: XCTestCase {
     
     /// Настроивает модуль в зависимости от case
     func prepareModuleWithCase(one: Bool, two: Bool) {
+        
+        let randomAnime = RandomAnime(data: AnimeData(title: "Foo", images: AnimeData.Image(jpg: AnimeData.Image.JPG(imageUrl: "Bvaz"))))
+        let anime = Anime(data: [])
         if one {
-            dataFetcher = DataFetcherStub(randomAnime: RandomAnime(data: AnimeData(title: "Foo", images: AnimeData.Image(jpg: AnimeData.Image.JPG(imageUrl: "Baz")))),
-                                          anime: Anime(data: []))
+            if two {
+                dataFetcher = DataFetcherStub(randomAnime: randomAnime,
+                                              anime: anime)
+            } else {
+                dataFetcher = DataFetcherStub(translateError: .failedToTranslate,
+                                              randomAnime: randomAnime,
+                                              anime: anime)
+            }
         } else {
-            dataFetcher = DataFetcherStub(retrieveError: .failedToLoad)
+            dataFetcher = DataFetcherStub(animeError: .failedToLoad)
         }
         
-        if two {
-            translateManager = TranslateManagerStub()
-        } else {
-            translateManager = TranslateManagerStub(retrieveError: .failedToTranslate)
-        }
         
-        sut = DataFetcherProxy(translateManager: translateManager,
-                               dataFetcher: dataFetcher,
+        sut = DataFetcherProxy(dataFetcher: dataFetcher,
                                animeAdapter: animeAdapter)
     }
     
@@ -67,7 +68,7 @@ final class DataFetcherProxyTests: XCTestCase {
     
     func testSuccessSearchSuccessTranslate() {
         //arange
-        let parameters: ParametersAnimeRequest = [.limit: "5", .letter: "Fo"]
+        let parameters = AnimeParameters(limit: 5, letter: "Fo")
         prepareModuleWithCase(one: true, two: true)
         
         //act & assert

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7D2DA2A12911BE1600DB870E /* String + Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2DA2A02911BE1600DB870E /* String + Localizable.swift */; };
-		7D2DA2A32911C4DD00DB870E /* TranslateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2DA2A22911C4DD00DB870E /* TranslateManager.swift */; };
 		7D2F91F42907218E000C7480 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F91F32907218D000C7480 /* DataFetcherService.swift */; };
 		7D2F91F6290721B6000C7480 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F91F5290721B5000C7480 /* NetworkDataFetcher.swift */; };
 		7D2F91FA29072F50000C7480 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F91F929072F4F000C7480 /* ImageDownloadService.swift */; };
@@ -37,8 +36,6 @@
 		7D46E35C2914329C00185F0A /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E35B2914329C00185F0A /* Parameters.swift */; };
 		7D46E35E29154C4F00185F0A /* RequestBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E35D29154C4F00185F0A /* RequestBuilding.swift */; };
 		7D46E3602915527100185F0A /* AnimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E35F2915527100185F0A /* AnimeRequest.swift */; };
-		7D46E362291552D700185F0A /* String + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46E361291552D700185F0A /* String + URL.swift */; };
-		7D487381291A78F1006066F4 /* TranslateManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D487380291A78F1006066F4 /* TranslateManagerStub.swift */; };
 		7D487383291A790E006066F4 /* DataFetcherStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D487382291A790E006066F4 /* DataFetcherStub.swift */; };
 		7D487385291A793F006066F4 /* MockAnimeCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D487384291A793F006066F4 /* MockAnimeCellAdapter.swift */; };
 		7D800EAB29044A5D0013E211 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D800EAA29044A5D0013E211 /* SnapKit */; };
@@ -69,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		7D2DA2A02911BE1600DB870E /* String + Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localizable.swift"; sourceTree = "<group>"; };
-		7D2DA2A22911C4DD00DB870E /* TranslateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateManager.swift; sourceTree = "<group>"; };
 		7D2F91F32907218D000C7480 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		7D2F91F5290721B5000C7480 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		7D2F91F929072F4F000C7480 /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
@@ -98,8 +94,6 @@
 		7D46E35B2914329C00185F0A /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		7D46E35D29154C4F00185F0A /* RequestBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilding.swift; sourceTree = "<group>"; };
 		7D46E35F2915527100185F0A /* AnimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeRequest.swift; sourceTree = "<group>"; };
-		7D46E361291552D700185F0A /* String + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + URL.swift"; sourceTree = "<group>"; };
-		7D487380291A78F1006066F4 /* TranslateManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateManagerStub.swift; sourceTree = "<group>"; };
 		7D487382291A790E006066F4 /* DataFetcherStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherStub.swift; sourceTree = "<group>"; };
 		7D487384291A793F006066F4 /* MockAnimeCellAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnimeCellAdapter.swift; sourceTree = "<group>"; };
 		7DB17E07290321F30052E526 /* #19 AnimeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#19 AnimeBook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +149,6 @@
 			children = (
 				7D2F91FF29096034000C7480 /* Date + ConvertDate.swift */,
 				7D2DA2A02911BE1600DB870E /* String + Localizable.swift */,
-				7D46E361291552D700185F0A /* String + URL.swift */,
 				7D2F9201290964D4000C7480 /* UIViewController + SetupRequestAlert.swift */,
 				7D32DD032915ACDF00C2A472 /* UIViewController + ShowAlertError.swift */,
 				7D2F9245290C664F000C7480 /* UIViewController + CustomBarButton.swift */,
@@ -256,7 +249,6 @@
 			children = (
 				7D32DD2329193EB100C2A472 /* DataFetcherProxyTests.swift */,
 				7D487382291A790E006066F4 /* DataFetcherStub.swift */,
-				7D487380291A78F1006066F4 /* TranslateManagerStub.swift */,
 				7D487384291A793F006066F4 /* MockAnimeCellAdapter.swift */,
 			);
 			path = DataFetcherProxy;
@@ -355,7 +347,6 @@
 		7DB17E2A2903371A0052E526 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				7D2DA2A22911C4DD00DB870E /* TranslateManager.swift */,
 				7D2F91F5290721B5000C7480 /* NetworkDataFetcher.swift */,
 				7D2F91F929072F4F000C7480 /* ImageDownloadService.swift */,
 			);
@@ -511,7 +502,6 @@
 				7D487385291A793F006066F4 /* MockAnimeCellAdapter.swift in Sources */,
 				7D32DD1D29191DFA00C2A472 /* MockAnimeListRouter.swift in Sources */,
 				7D32DD2429193EB100C2A472 /* DataFetcherProxyTests.swift in Sources */,
-				7D487381291A78F1006066F4 /* TranslateManagerStub.swift in Sources */,
 				7D32DD1B29191DE100C2A472 /* DataFetcherProxySpy.swift in Sources */,
 				7D487383291A790E006066F4 /* DataFetcherStub.swift in Sources */,
 			);
@@ -523,7 +513,6 @@
 			files = (
 				7DB17E0F290321F40052E526 /* AnimeListViewController.swift in Sources */,
 				7D2F91FA29072F50000C7480 /* ImageDownloadService.swift in Sources */,
-				7D46E362291552D700185F0A /* String + URL.swift in Sources */,
 				7D2F91F42907218E000C7480 /* DataFetcherService.swift in Sources */,
 				7DB17E33290337960052E526 /* DetailAnimePresenter.swift in Sources */,
 				7D2F920F290B0669000C7480 /* AnimeCellAdapter.swift in Sources */,
@@ -532,7 +521,6 @@
 				7D2F9202290964D4000C7480 /* UIViewController + SetupRequestAlert.swift in Sources */,
 				7D2DA2A12911BE1600DB870E /* String + Localizable.swift in Sources */,
 				7DB17E28290337020052E526 /* AnimeListAssembly.swift in Sources */,
-				7D2DA2A32911C4DD00DB870E /* TranslateManager.swift in Sources */,
 				7D2F91FD2908794A000C7480 /* LanguageRequest.swift in Sources */,
 				7DB17E2C290337270052E526 /* Anime.swift in Sources */,
 				7D32DD042915ACDF00C2A472 /* UIViewController + ShowAlertError.swift in Sources */,

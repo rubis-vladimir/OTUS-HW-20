@@ -60,7 +60,7 @@ final class AnimeListPresenterTests: XCTestCase {
     func testGetSuccessModelsSearch() {
         //arange
         prepareModuleWithCase(success: true)
-        let parameters: ParametersAnimeRequest = [.letter: "Baz"]
+        let parameters = AnimeParameters(letter: "Baz")
         
         //act
         sut.getAnime(with: .search(with: parameters))
@@ -87,7 +87,7 @@ final class AnimeListPresenterTests: XCTestCase {
     func testViewSuccessSearch() {
         //arange
         prepareModuleWithCase(success: true)
-        let parameters: ParametersAnimeRequest = [.letter: "Baz"]
+        let parameters = AnimeParameters(letter: "Baz")
         
         //act
         sut.getAnime(with: .search(with: parameters))

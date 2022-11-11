@@ -30,14 +30,11 @@ final class DataFetcherProxySpy: DataFetcherProxyProtocol {
                 completion(.failure(error))
             }
             
-        case let .search(with: with):
-            if !with.isEmpty {
-                with.forEach { key, value in
-                    guard key == .letter else { return }
-                    let animeModel = AnimeModel(title: "\(value) Bar")
+        case let .search(with: parameters):
+            if let letter = parameters.letter {
+                    let animeModel = AnimeModel(title: "\(letter) Bar")
                     animeModels.append(animeModel)
                     completion(.success(animeModels))
-                }
             } else {
                 if !animeModels.isEmpty {
                     completion(.success(animeModels))
