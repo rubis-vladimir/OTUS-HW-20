@@ -12,7 +12,7 @@ extension UIViewController {
     /// Показывает алерт для настройки цвета
     ///  - Parameters:
     ///   - completion: захвать обновленного цвета
-    func showSetupRequestAlert(completion: @escaping ([AnimeParameters: String]) -> ()) {
+    func showSetupRequestAlert(completion: @escaping (AnimeParameters) -> ()) {
         
         let alert = UIAlertController(title: nil,
                                       message: "\n\n\n\n\n\n\n",
@@ -30,13 +30,13 @@ extension UIViewController {
                                          style: .cancel)
         let okAction = UIAlertAction(title: "OK",
                                      style: .default) { _ in
-            var parameters: [AnimeParameters: String] = [:]
+            var parameters = AnimeParameters()
             
-            if let text = limitTF.text  {
-                parameters[.limit] = text
+            if let number = Int(limitTF.text ?? "0")  {
+                parameters.limit = number
             }
-            parameters[.startDate] = startDatePicker.date.convertDateToString()
-            parameters[.endDate] = startDatePicker.date.convertDateToString()
+            parameters.startDate = startDatePicker.date
+            parameters.endDate = startDatePicker.date
             completion(parameters)
         }
         

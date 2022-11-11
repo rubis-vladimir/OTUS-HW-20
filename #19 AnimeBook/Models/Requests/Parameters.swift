@@ -21,9 +21,16 @@ struct TranslateParameters: Codable {
     }
 }
 
-enum AnimeParameters: String, Codable {
-    case limit
-    case letter
-    case startDate
-    case endDate
+//enum AnimeParameters: String, Codable {
+//    case limit
+//    case letter
+//    case startDate
+//    case endDate
+//}
+
+struct AnimeParameters: Codable {
+    var limit: Int?
+    var letter: String?
+    var startDate: Date?
+    var endDate: Date?
 }

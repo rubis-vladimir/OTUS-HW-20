@@ -13,7 +13,7 @@ protocol DataFetcherAnimeManagement {
     ///  - Parameters:
     ///   - requestBuilder: конфигуратор запроса
     ///   - completion: захватывает модель Аниме / ошибку
-    func fetchAnime(with parameters: ParametersAnimeRequest,
+    func fetchAnime(with parameters: AnimeParameters,
                     completion: @escaping (Result<Anime, DataFetcherError>) -> Void)
     
     func fetchRandomAnime(completion: @escaping (Result<RandomAnime, DataFetcherError>) -> Void)
@@ -35,18 +35,18 @@ final class DataFetcherService {
         self.dataFetcher = dataFetcher
     }
     
-    /// Преобразует словарь параметров в строку
-    private func convertForRequest(_ parameters: ParametersAnimeRequest) -> String {
-        return parameters.map { "\($0)=\($1)" }.joined(separator: "&")
-    }
+//    /// Преобразует словарь параметров в строку
+//    private func convertForRequest(_ parameters: AnimeParameters) -> String {
+//        return parameters.map { "\($0)=\($1)" }.joined(separator: "&")
+//    }
 }
 
 // MARK: - DataFetcherServiceManagement
 extension DataFetcherService: DataFetcherAnimeManagement {
-    func fetchAnime(with parameters: ParametersAnimeRequest,
+    func fetchAnime(with parameters: AnimeParameters,
                    completion: @escaping (Result<Anime, DataFetcherError>) -> Void) {
-        let stringParameters = convertForRequest(parameters)
-        dataFetcher.fetchData(requestBuilder: AnimeRequest.getAnime(patameters: stringParameters),
+//        let stringParameters = convertForRequest(parameters)
+        dataFetcher.fetchData(requestBuilder: AnimeRequest.getAnime(patameters: parameters),
                               completion: completion)
     }
     

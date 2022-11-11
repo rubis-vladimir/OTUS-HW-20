@@ -28,6 +28,7 @@ final class DataFetcherProxyTests: XCTestCase {
         super.tearDown()
     }
     
+    /// Настроивает модуль в зависимости от case
     func prepareModuleWithCase(one: Bool, two: Bool) {
         if one {
             dataFetcher = DataFetcherStub(randomAnime: RandomAnime(data: AnimeData(title: "Foo", images: AnimeData.Image(jpg: AnimeData.Image.JPG(imageUrl: "Baz")))),

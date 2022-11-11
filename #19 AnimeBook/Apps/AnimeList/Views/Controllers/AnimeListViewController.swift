@@ -209,7 +209,9 @@ extension AnimeListViewController: UISearchBarDelegate {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5,
                                      repeats: false) { [weak self] _ in
-            self?.presenter.getAnime(with: .search(with: [.letter: "\(searchText)"]))
+            var parameters = AnimeParameters()
+            parameters.letter = "\(searchText)"
+            self?.presenter.getAnime(with: .search(with: parameters))
         }
     }
 }

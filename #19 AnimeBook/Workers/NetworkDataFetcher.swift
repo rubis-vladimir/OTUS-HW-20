@@ -23,7 +23,7 @@ final class NetworkDataFetcher {
     
     /// Запрашивает данные из сети и при получении декодирует в модель типа `T`
     private func fetchJSONData<T: Decodable>(request: URLRequest,
-                                     completion: @escaping (Result<T, DataFetcherError>) -> Void) {
+                                             completion: @escaping (Result<T, DataFetcherError>) -> Void) {
         URLSession.shared.dataTask(with: request) { (data, responce, error) in
             
             guard responce != nil else {

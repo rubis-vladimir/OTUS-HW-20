@@ -20,7 +20,7 @@ protocol LocalizedError : Error {
 /// Ошибки слоя получения, коддирования/декодирования данных
 enum DataFetcherError: Error {
     /// Не может создать URL из строки
-    case notUrl
+    case wrongUrl
     /// Отсутствует сетевое соединение
     case notInternet
     /// Загрузка данных не удалась
@@ -40,7 +40,7 @@ extension DataFetcherError: LocalizedError {
         switch self {
         case .notInternet:
             return "No Internet Connection".localize()
-        case .notUrl, .failedToLoad, .failedToEncode, .failedToDecode, .failedToTranslate:
+        case .wrongUrl, .failedToLoad, .failedToEncode, .failedToDecode, .failedToTranslate:
             return "Error".localize()
         }
     }
@@ -49,7 +49,7 @@ extension DataFetcherError: LocalizedError {
         switch self {
         case .notInternet:
             return nil
-        case .notUrl, .failedToLoad, .failedToEncode, .failedToDecode:
+        case .wrongUrl, .failedToLoad, .failedToEncode, .failedToDecode:
             return "Something went wrong".localize()
         case .failedToTranslate:
             return "Unfortunately, it was not possible to localize (translate) the data".localize()
@@ -62,7 +62,7 @@ extension DataFetcherError: LocalizedError {
             return "Please check your internet connection and try again".localize()
         case .failedToLoad:
             return "Please, try again".localize()
-        case .notUrl, .failedToEncode, .failedToDecode, .failedToTranslate:
+        case .wrongUrl, .failedToEncode, .failedToDecode, .failedToTranslate:
             return "Send information to support. We will deal with this problem in the near future".localize()
         }
     }

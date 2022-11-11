@@ -7,14 +7,14 @@
 
 import Foundation
 
-typealias ParametersAnimeRequest = [AnimeParameters: String]
+//typealias ParametersAnimeRequest = [AnimeParameters: String]
 
 /// Виды запросов аниме
 enum GetAnimeType {
     /// Запрос одного случайного аниме
     case random
     /// Запрос аниме по параметрам
-    case search(with: ParametersAnimeRequest)
+    case search(with: AnimeParameters)
 }
 
 /// Протокол передачи UI-ивентов модуля AnimeList
@@ -56,7 +56,6 @@ extension AnimeListPresenter: AnimeListPresentation {
             case .success(let models):
                 self?.animeModels = models
             case .failure(let error):
-                
                 var actions: [RecoveryOptions] = [.cancel]
                 switch error {
                 case .notInternet, .failedToLoad, .failedToTranslate:

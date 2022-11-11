@@ -10,7 +10,7 @@ import Foundation
 /// Запрос Аниме из сети
 enum AnimeRequest {
     /// Получить Аниме по параметрам
-    case getAnime(patameters: String?)
+    case getAnime(patameters: AnimeParameters)
     /// Получить случайное Аниме
     case getRandomAnime
 }
@@ -19,19 +19,30 @@ enum AnimeRequest {
 // MARK: - RequestBuilding
 extension AnimeRequest: RequestBuilding {
     var baseUrl: String {
-        "https://api.jikan.moe/v4"
+        "api.jikan.moe"
     }
     
     var path: String {
         switch self {
-        case .getAnime (let parameters):
-            var path = "/anime"
-            if let parameters = parameters {
-                path += "?\(parameters)"
-            }
-            return path
+        case .getAnime:
+            return "/v4/anime"
         case .getRandomAnime:
-            return "/random/anime"
+            return "/v4/random/anime"
+        }
+    }
+    
+    var queryItems: [URLQueryItem]? {
+        
+        switch self {
+        case .getAnime(let parameters):
+            return [
+                URLQueryItem(name: "letter", value: parameters.letter),
+                URLQueryItem(name: "limit", value: String(parameters.limit ?? 0)),
+                URLQueryItem(name: "startDate", value: parameters.startDate?.convertDateToString()),
+                URLQueryItem(name: "endDate", value: parameters.endDate?.convertDateToString())
+            ]
+        case .getRandomAnime:
+            return nil
         }
     }
     

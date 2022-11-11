@@ -11,7 +11,7 @@ extension String {
     
     /// Получить URL из строки
     func asURL() throws -> URL {
-        guard let url = URL(string: self) else { throw DataFetcherError.notUrl }
+        guard let url = URL(string: self) else { throw DataFetcherError.wrongUrl }
         return url
     }
 }

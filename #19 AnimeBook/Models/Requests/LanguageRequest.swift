@@ -15,7 +15,7 @@ enum LanguageRequest<T: Codable> {
 // MARK: - RequestBuilding
 extension LanguageRequest: RequestBuilding {
     var baseUrl: String {
-        "https://translate.api.cloud.yandex.net"
+        "translate.api.cloud.yandex.net"
     }
     
     var path: String {
@@ -24,6 +24,8 @@ extension LanguageRequest: RequestBuilding {
             return "/translate/v2/translate"
         }
     }
+    
+    var queryItems: [URLQueryItem]? { nil }
     
     var method: HTTPMethod {
         switch self {
